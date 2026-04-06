@@ -8,7 +8,11 @@ import { clerkWebhooks } from "./controllers/webhooks.js";
 const app = express();
 
 // Connect to Database
-await connectDB()
+try {
+    await connectDB()
+} catch (error) {
+    console.error('Failed to connect to database:', error)
+}
 
 // Middlewares
 app.use(cors());
@@ -18,9 +22,12 @@ app.use(cors());
 app.get("/", (req, res)=> res.send("API Working"))
 app.post('/clerk', express.json(), clerkWebhooks)
 
-// PORT
-const PORT = process.env.PORT || 5005;
+// For local development
+if (process.env.NODE_ENV !== 'production') {
+    const PORT = process.env.PORT || 5005;
+    app.listen(PORT, ()=>{
+        console.log(`Server is running at ${PORT}`)
+    })
+}
 
-app.listen(PORT, ()=>{
-    console.log(`Server is running at ${PORT}`)
-})
+export default app
