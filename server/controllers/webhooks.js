@@ -1,6 +1,5 @@
 import { Webhook } from "svix";
 import User from "../models/User.js"
-import { success } from "zod";
 
 // API Controller Function to manage Clerk User with database
 
