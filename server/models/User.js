@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
-import { string } from "zod";
-import { required } from "zod/mini";
+
 
 const userSchema = new mongoose.Schema({
     _id: {type:String, required:true},
