@@ -14,4 +14,6 @@ const PurchaseSchema = new mongoose.Schema({
     status: {type:String, enum:['Pending', 'Completed', 'Failed'], default:'pending'}
 }, {timestamps:true})
 
-export const Purchase = mongoose.model('Purchase', PurchaseSchema)
+const Purchase = mongoose.model('Purchase', PurchaseSchema)
+
+export default Purchase
