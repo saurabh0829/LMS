@@ -2,7 +2,6 @@ import User from "../models/User.js"
 import {Purchase} from "../models/purchase.js"
 import Stripe from 'stripe'
 import Course from '../models/course.js'
-import { success } from "zod"
 // Get User Data
 export const getUserData = async (req, res) => {
     try {
