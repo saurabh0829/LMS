@@ -1,6 +1,6 @@
 import { clerkClient } from "@clerk/express"
 import Course from "../models/course.js"
-import { Purchase } from "../models/purchase.js"
+import Purchase from "../models/Purchase.js"
 import cloudinary from "../config/cloudinary.js"
 import User from "../models/User.js"
 
