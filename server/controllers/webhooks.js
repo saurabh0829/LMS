@@ -3,7 +3,6 @@ import User from "../models/User.js"
 import Stripe from "stripe"
 import Purchase from '../models/purchase.js'
 import Course from '../models/course.js'
-import User from "../models/User.js";
 
 // API Controller Function to manage Clerk User with database
 
@@ -114,7 +113,7 @@ export const stripeWebhooks = async (req, res) => {
 
             break;
         }
-        
+
         default:
             console.log(`Unhandled event type ${event.type}`);
 
